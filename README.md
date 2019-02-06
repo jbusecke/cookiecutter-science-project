@@ -24,8 +24,10 @@ $ conda - c conda-forge install cookiecutter
 
 ### To start a new project, run:
 ------------
+``` bash
+$ cookiecutter https://github.com/jbusecke/cookiecutter-science-project
+```
 
-    cookiecutter https://github.com/jbusecke/cookiecutter-science-project
 
 <!-- ### The resulting directory structure
 ------------
