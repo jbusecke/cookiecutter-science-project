@@ -1,9 +1,9 @@
-# Cookiecutter Data Science
+# Cookiecutter Science Project
 
-_A logical, reasonably standardized, but flexible project structure for doing and sharing data science work._
+_A slim cookiecutter template for science projects._
 
 
-#### [Project homepage](http://drivendata.github.io/cookiecutter-data-science/)
+Inspired by [cookiecutter-science-project](https://github.com/jbusecke/cookiecutter-science-project)
 
 
 ### Requirements to use the cookiecutter template:
@@ -18,24 +18,19 @@ $ pip install cookiecutter
 or
 
 ``` bash
-$ conda config --add channels conda-forge
-$ conda install cookiecutter
+$ conda - c conda-forge install cookiecutter
 ```
 
 
 ### To start a new project, run:
 ------------
 
-    cookiecutter https://github.com/drivendata/cookiecutter-data-science
+    cookiecutter https://github.com/jbusecke/cookiecutter-science-project
 
-
-[![asciicast](https://asciinema.org/a/9bgl5qh17wlop4xyxu9n9wr02.png)](https://asciinema.org/a/9bgl5qh17wlop4xyxu9n9wr02)
-
-
-### The resulting directory structure
+<!-- ### The resulting directory structure
 ------------
 
-The directory structure of your new project looks like this: 
+The directory structure of your new project looks like this:
 
 ```
 ├── LICENSE
@@ -85,9 +80,9 @@ The directory structure of your new project looks like this:
 
 ## Contributing
 
-We welcome contributions! [See the docs for guidelines](https://drivendata.github.io/cookiecutter-data-science/#contributing).
+We welcome contributions! [See the docs for guidelines](https://drivendata.github.io/cookiecutter-data-science/#contributing). -->
 
-### Installing development requirements
+<!-- ### Installing development requirements
 ------------
 
     pip install -r requirements.txt
@@ -95,4 +90,4 @@ We welcome contributions! [See the docs for guidelines](https://drivendata.githu
 ### Running the tests
 ------------
 
-    py.test tests
+    py.test tests -->

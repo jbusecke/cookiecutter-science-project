@@ -1,0 +1,31 @@
+# some standard scientific data libraries. Customize to your liking.
+name: test_env
+channels:
+  - conda-forge
+  - pyviz
+dependencies:
+  - xarray
+  - jupyter
+  - astropy
+  - dask
+  - distributed
+  - dask-jobqueue
+  - numpy
+  - scipy
+  - seaborn
+  - matplotlib
+  - scikit-image
+  - pytest
+  - future
+  - cartopy
+  - jupyterlab
+  - sympy
+  - palettable
+  - gsw
+  - numba
+  - flake8
+  - hvplot
+  - geoviews
+  - zarr
+  - nc-time-axis
+  - nodejs
