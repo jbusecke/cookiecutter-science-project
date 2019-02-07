@@ -31,7 +31,7 @@ script:
   - which python
   - python --version
   - python -OO -c "import {{ cookiecutter.repo_name }}"
-  - py.test {{ cookiecutter.repo_name }} --cov={{ cookiecutter.repo_name }} --cov-config .coveragerc --cov-report term-missing --verbose $EXTRA_FLAGS;
+  - py.test {{ cookiecutter.repo_name }} --cov={{ cookiecutter.repo_name }} --cov-config ci/.coveragerc --cov-report term-missing --verbose $EXTRA_FLAGS;
 
 after_success:
   - codecov

@@ -28,6 +28,24 @@ $ conda - c conda-forge install cookiecutter
 $ cookiecutter https://github.com/jbusecke/cookiecutter-science-project
 ```
 
+Hop over to [github](https://github.com), set up a new repository with name <nana> (I recommend choosing the repo name entered in the cookiecutter call from above).
+
+Then in the directory created by cookiecutter do
+
+```bash
+$ git init
+$ git add *
+$ git add .*
+$ git commit -m 'first commit'
+$ git remote add origin git@github.com:<username>/<nana>.git
+$ git push -u origin master
+```
+Now head over to [travis](https://travis-ci.org/), ...
+For each service log in with your github account and follow the instructions for activating your github repo.
+
+
+
+
 
 <!-- ### The resulting directory structure
 ------------
