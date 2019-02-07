@@ -1,5 +1,5 @@
 import pytest
-from {{cookiecutter.repo_name}} import dummy_foo
+from {{cookiecutter.repo_name}}.dummy import dummy_foo
 
 
 def test_dummy():

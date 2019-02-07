@@ -34,14 +34,16 @@ Then in the directory created by cookiecutter do
 
 ```bash
 $ git init
-$ git add *
-$ git add .*
+$ git add -f *
 $ git commit -m 'first commit'
 $ git remote add origin git@github.com:<username>/<nana>.git
 $ git push -u origin master
 ```
 Now head over to [travis](https://travis-ci.org/), ...
 For each service log in with your github account and follow the instructions for activating your github repo.
+> It can take a while until new repos show up in travis. Just get a cup of coffee or have a nice chat with your office mate.
+
+You can check if everything is working properly by committing some text to the readme, or just get straight to analysis!
 
 
 
