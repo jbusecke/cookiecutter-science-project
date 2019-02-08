@@ -33,11 +33,7 @@ Hop over to [github](https://github.com), set up a new repository with name <nan
 Then in the directory created by cookiecutter do
 
 ```bash
-$ git init
-$ git add -f *
-$ git commit -m 'first commit'
-$ git remote add origin git@github.com:<username>/<nana>.git
-$ git push -u origin master
+$ ./scripts/setup.sh
 ```
 Now head over to [travis](https://travis-ci.org/), ...
 For each service log in with your github account and follow the instructions for activating your github repo.
