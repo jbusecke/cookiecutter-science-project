@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 # Link local repository to git (you need to create a github repo with the
 # same name before)
 git init
