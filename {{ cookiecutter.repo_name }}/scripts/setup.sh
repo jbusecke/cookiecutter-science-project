@@ -3,7 +3,7 @@
 # same name before)
 git init
 git add *
-git add .gitignore *.yml
+git add .gitignore .stickler.yml .travis.yml
 git commit -m 'first commit'
 git remote add origin git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}.git
 git push -u origin master
