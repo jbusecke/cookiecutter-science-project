@@ -27,14 +27,14 @@ $ conda - c conda-forge install cookiecutter
 ``` bash
 $ cookiecutter https://github.com/jbusecke/cookiecutter-science-project
 ```
+The directory includes a simple setup script, which will create a github repository and commit the current state as initial commit.
 
-Hop over to [github](https://github.com), set up a new repository with name <nana> (I recommend choosing the repo name entered in the cookiecutter call from above).
-
-Then in the directory created by cookiecutter do
+In the directory created by cookiecutter do
 
 ```bash
 $ ./scripts/setup.sh
 ```
+
 Now head over to [travis](https://travis-ci.org/), ...
 For each service log in with your github account and follow the instructions for activating your github repo.
 > It can take a while until new repos show up in travis. Just get a cup of coffee or have a nice chat with your office mate.

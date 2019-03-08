@@ -1,6 +1,10 @@
 #!/bin/bash
-# Link local repository to git (you need to create a github repo with the
-# same name before)
+# Create a github_repo from the command line...so cool (more here: https://developer.github.com/v3/repos/#create)
+# I should probably implement some check if the creation was successful
+# defaults to private, I think this is safer, can always be made public later?
+curl -u '{{ cookiecutter.github_username }}' https://api.github.com/user/repos -d '{"name":"{{ cookiecutter.repo_name }}", "private":"true"}'
+
+# Link local repository to git
 git init
 git add *
 git add .gitignore .stickler.yml .travis.yml
