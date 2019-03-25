@@ -1,4 +1,4 @@
-name: {{ cookiecutter.repo_name }}
+name: {{ cookiecutter.project_name.lower().replace(' ', '_') }}
 channels:
   - conda-forge
   - pyviz

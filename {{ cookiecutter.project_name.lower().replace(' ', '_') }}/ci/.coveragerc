@@ -8,5 +8,5 @@ exclude_lines =
     raise NotImplementedError
     if __name__ == .__main__.:
 ignore_errors = True
-omit = {{ cookiecutter.repo_name }}/tests/*
-       {{ cookiecutter.repo_name }}/__init__.py
+omit = {{ cookiecutter.project_name.lower().replace(' ', '_') }}/tests/*
+       {{ cookiecutter.project_name.lower().replace(' ', '_') }}/__init__.py
