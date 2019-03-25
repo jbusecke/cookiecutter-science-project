@@ -27,6 +27,12 @@ $ conda - c conda-forge install cookiecutter
 ``` bash
 $ cookiecutter https://github.com/jbusecke/cookiecutter-science-project
 ```
+If you have previously created a package with this template confirm the prompt to redownload the newest version.
+The installation dialog will ask for a few inputs:
+- `project_name`: The name of the project
+
+
+
 The directory includes a simple setup script, which will create a github repository and commit the current state as initial commit.
 
 In the directory created by cookiecutter do
