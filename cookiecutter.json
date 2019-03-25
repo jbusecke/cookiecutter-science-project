@@ -5,5 +5,5 @@
     "author_name": "Your name (or your organization/company/team)",
     "github_username": "Destination github org or username",
     "description": "A short description of the project.",
-    "open_source_license": ["MIT", "BSD-3-Clause", "No license file"],
+    "open_source_license": ["MIT", "BSD-3-Clause", "No license file"]
 }
