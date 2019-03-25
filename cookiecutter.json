@@ -1,9 +1,9 @@
 {
     "project_name": "project_name",
     "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+    "repo_private": ["true", "false"],
     "author_name": "Your name (or your organization/company/team)",
     "github_username": "Destination github org or username",
     "description": "A short description of the project.",
     "open_source_license": ["MIT", "BSD-3-Clause", "No license file"],
-    "python_interpreter": "python3"
 }
