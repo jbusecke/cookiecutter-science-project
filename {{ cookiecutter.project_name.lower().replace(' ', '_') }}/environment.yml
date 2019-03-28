@@ -1,33 +1,9 @@
 name: {{ cookiecutter.project_name.lower().replace(' ', '_') }}
 channels:
   - conda-forge
-  - pyviz
 dependencies:
   - jupyter
-  - astropy
-  - dask
-  - distributed
-  - dask-jobqueue
-  - mpi4py
-  - numpy
-  - scipy
-  - seaborn
-  - matplotlib
-  - scikit-image
-  - pytest
-  - cartopy
-  - line_profiler
   - jupyterlab
-  - palettable
-  - gsw
-  - numba
-  - hvplot
-  - geoviews
-  - zarr
-  - nc-time-axis
-# for jupyterlab and extentions
-  - nodejs
-  - pip:
-    - "--editable=git+https://github.com/pydata/xarray.git@master#egg=xarray"
-    - "--editable=git+https://github.com/xgcm/xgcm.git@master#egg=xgcm"
-    - "--editable=git+https://github.com/jbusecke/xarrayutils.git@master#egg=xarrayutils"
+  - xarray
+  - numpy
+  - pandas

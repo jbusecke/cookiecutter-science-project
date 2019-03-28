@@ -30,7 +30,57 @@ $ cookiecutter https://github.com/jbusecke/cookiecutter-science-project
 If you have previously created a package with this template confirm the prompt to redownload the newest version.
 The installation dialog will ask for a few inputs:
 - `project_name`: The name of the project. This will be used as package name and repository name on github for consistency (whitespaces will be replaced with underscores)
--
+- `repo_private`: Chose between a private or public github repository. Be aware that some of the steps below differ for private and public repositories.
+- `author_name`: Your name.
+- `github_username`: Your username for [github](https://github.com).
+- `description`: A short description of the project for the readme.
+- `open_source_license`: Chose a license for your package. Currently available licenses are: "MIT" and "BSD-3-Clause", details can be found [here]().
+- `python_interpreter`: Chose your python version. In most cases just press enter to chose python 3.
+
+### The resulting directory structure
+------------
+
+This will set up a project folder with the following structure in the current directory:
+
+```
+├── LICENSE
+├── README.md          <- The top-level README for developers using this project.
+├── data
+│   ├── interim        <- Intermediate data that has been transformed.
+│   ├── processed      <- The final, canonical data sets for modeling.
+│   └── raw            <- The original, immutable data dump. Can contain
+│
+├── docs               <- A default Sphinx project; see sphinx-doc.org for details (Not supported yet...)
+│
+├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
+│                         the creator's initials, and a short `-` delimited description, e.g.
+│                         `1.0-jqp-initial-data-exploration`.
+│
+├── references         <- Data dictionaries, manuals, and all other explanatory materials.
+│
+├── environment.yml    <- Conda environment file. Create environment with
+|                         `conda env create -f environment.yml`
+│
+├── {{ cookiecutter.project_name.lower().replace(' ', '_') }}                <- Source code for use in this project.
+│   ├── __init__.py    <- Makes src a Python module
+│   │
+│   ├── data           <- Scripts to download or generate data
+│   │   └── make_dataset.py
+│   │
+│   ├── features       <- Scripts to turn raw data into features for modeling
+│   │   └── build_features.py
+│   │
+│   ├── models         <- Scripts to train models and then use trained models to make
+│   │   │                 predictions
+│   │   ├── predict_model.py
+│   │   └── train_model.py
+│   │
+│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
+│       └── visualize.py
+│
+└── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
+```
+
 
 
 
@@ -52,56 +102,7 @@ You can check if everything is working properly by committing some text to the r
 
 
 
-<!-- ### The resulting directory structure
-------------
 
-The directory structure of your new project looks like this:
-
-```
-├── LICENSE
-├── Makefile           <- Makefile with commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── src                <- Source code for use in this project.
-│   ├── __init__.py    <- Makes src a Python module
-│   │
-│   ├── data           <- Scripts to download or generate data
-│   │   └── make_dataset.py
-│   │
-│   ├── features       <- Scripts to turn raw data into features for modeling
-│   │   └── build_features.py
-│   │
-│   ├── models         <- Scripts to train models and then use trained models to make
-│   │   │                 predictions
-│   │   ├── predict_model.py
-│   │   └── train_model.py
-│   │
-│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-│       └── visualize.py
-│
-└── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
-```
 
 ## Contributing
 
