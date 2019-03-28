@@ -29,7 +29,7 @@ $ cookiecutter https://github.com/jbusecke/cookiecutter-science-project
 ```
 If you have previously created a package with this template confirm the prompt to redownload the newest version.
 The installation dialog will ask for a few inputs:
-- `project_name`: The name of the project. This will be used as package name and repository name on github for consistency (whitespaces will be replaced with underscores)
+- `project_name`: The name of the project. This will be used as package name and repository name on github for consistency (whitespaces will be replaced with underscores).
 - `repo_private`: Chose between a private or public github repository. Be aware that some of the steps below differ for private and public repositories.
 - `author_name`: Your name.
 - `github_username`: Your username for [github](https://github.com).
@@ -43,42 +43,39 @@ The installation dialog will ask for a few inputs:
 This will set up a project folder with the following structure in the current directory:
 
 ```
+├── setup.py
+├── README.md             <- The top-level README for developers using this project.
 ├── LICENSE
-├── README.md          <- The top-level README for developers using this project.
+├── environment.yml       <- Conda environment file. Create environment with
+│                           `conda env create -f environment.yml`
+├── .travis.yml           <- Conda environment file. Create environment with
+│                           `conda env create -f environment.yml`
+├── .stickler.yml         <- Conda environment file. Create environment with
+│                           `conda env create -f environment.yml`
+├── scripts              
+│   └── setup.sh          <- Shell script to initialize new project. C
+│
+├── references            <- Data dictionaries, manuals, and all other explanatory materials.
+│
+├── notebooks             <- Jupyter notebooks. Naming convention is a number (for ordering),
+│                           the creator's initials, and a short `-` delimited description, e.g.
+│                           `1.0-jqp-initial-data-exploration`.
+│
 ├── data
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump. Can contain
+│   ├── interim           <- Small subset datasets needed to reproduce results in notebooks.
+│   ├── processed         <- Datasets that were processed from `raw` folder
+│   └── raw               <- Immutable raw data. Download from source with a script or link from    
+│                            other source (e.g. HPC filesytem)
 │
-├── docs               <- A default Sphinx project; see sphinx-doc.org for details (Not supported yet...)
+├── ci                    <- Files for continous integration; see travis-ci.com
 │
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── environment.yml    <- Conda environment file. Create environment with
-|                         `conda env create -f environment.yml`
-│
-├── {{ cookiecutter.project_name.lower().replace(' ', '_') }}                <- Source code for use in this project.
-│   ├── __init__.py    <- Makes src a Python module
-│   │
-│   ├── data           <- Scripts to download or generate data
-│   │   └── make_dataset.py
-│   │
-│   ├── features       <- Scripts to turn raw data into features for modeling
-│   │   └── build_features.py
-│   │
-│   ├── models         <- Scripts to train models and then use trained models to make
-│   │   │                 predictions
-│   │   ├── predict_model.py
-│   │   └── train_model.py
-│   │
-│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-│       └── visualize.py
-│
-└── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
+└──  project_name         <- Source code for use in this project.
+    ├── __init__.py       <- Makes `project_name` a Python module
+    │
+    ├── dummy.py          <- Example python module file. These contain your installable functions
+    |
+    └── tests
+        └── test_dummy.py
 ```
 
 

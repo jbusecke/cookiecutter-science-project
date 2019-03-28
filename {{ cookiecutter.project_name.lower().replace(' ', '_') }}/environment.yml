@@ -2,6 +2,9 @@ name: {{ cookiecutter.project_name.lower().replace(' ', '_') }}
 channels:
   - conda-forge
 dependencies:
+  # Required for full project functionality (dont remove)
+  - pytest
+  # Examples (remove and add as needed)
   - jupyter
   - jupyterlab
   - xarray
