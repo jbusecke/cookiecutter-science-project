@@ -3,7 +3,7 @@
 _A slim cookiecutter template for science projects._
 
 
-Inspired by [cookiecutter-science-project](https://github.com/jbusecke/cookiecutter-science-project)
+Modified from [cookiecutter-data-science](https://github.com/drivendata/cookiecutter-data-science)
 
 
 ### Requirements to use the cookiecutter template:
