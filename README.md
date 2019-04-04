@@ -2,13 +2,14 @@
 
 ---------------
 _A slim cookiecutter template for reproducible science projects._
-
 ---------------
 
 
 If you want to start a science project fast, but still encourage good coding practices and reproducibility without spending hours on the setup this template is for you.
 
 You have just started with python and learning all the great elements of the stack seems overwhelming? Just follow the quickstart guide and have everything set up to 'level up' seamlessly along the way.
+
+An example repository can be found [here](https://github.com/jbusecke/project_name)
 
 This work is modified from [cookiecutter-data-science](https://drivendata.github.io/cookiecutter-data-science/) with some modifications targeted towards earth scientist, but general enough for other fields aswell.
 
