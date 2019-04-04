@@ -189,6 +189,7 @@ I think that generally a set of principles should apply:
 Use your notebooks to present results without code ([example](https://github.com/jbusecke/guides/blob/master/analysis_sharing_workflow.md)), instead of writing up the same passages in an email with a bunch of loose figures. Your collaborators/advisors/mum will thank you!
 
 If you have suggestions, feel free to raise an issue or submit a pull request.
+
 Until then SCIENCE ON!
 
-![](https://media.giphy.com/media/d3mlYwpf96kMuFjO/giphy.gif)
+![](https://media.giphy.com/media/LXr2Uxk2xUO2I/giphy.gif)
