@@ -1,6 +1,10 @@
 # Cookiecutter Science Project
 
+---------------
 _A slim cookiecutter template for reproducible science projects._
+
+---------------
+
 
 If you want to start a science project fast, but still encourage good coding practices and reproducibility without spending hours on the setup this template is for you.
 
@@ -157,7 +161,10 @@ If your function definitions take over the majority of your notebook, refactor a
 Now at some point, you might want to use one or several of these functions in another project. This is the time to create a separate toolbox and migrate your code. The great thing is, that all the work is done already. All you have to do is copy the module/function and corresponding test (You did write tests, right?) to the new repository and change the import statements at the beginning of the appropriate notebooks. Thats it!
 
 #### Continous integration
-So unit-test seem cool, but do you want to run these tests all the time? Of course you dont. So head over to [travis](https://travis-ci.org/) and log in with your gitub account and follow the instructions for activating your github repo.
+So unit-test seem cool, but do you want to run these tests all the time? Of course you dont!
+
+So head over to [travis](https://travis-ci.org/) and log in with your gitub account and follow the instructions for activating your github repo.
 Its one switch and everything else is already set up!
 Now every time you push changes to your repository, travis downloads your package and the dependencies and runs all the tests. This way you can quickly identify if recent changes broke some of your code.
+
 > In order for travis to get all the necessary dependencies we use the `ci/requirements-py37.yml`. This is set up in the same way as `environment.yml`, and you have to make sure that the necessary packages are in both files. Some packages that are purely for interactive work like e.g. `jupyter`, do not need to be included in the `ci/requirements-py37.yml` environment file.
