@@ -14,7 +14,7 @@ This work is modified from [cookiecutter-data-science](https://drivendata.github
 
 ### Requirements to use the cookiecutter template:
  - A [github](https://github.com/) account.
- - [Conda package manager]()
+ - [Conda package manager](https://conda.io/en/latest/)
  - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html)
 
 You can install [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) easily with conda.
@@ -144,7 +144,7 @@ from project_name.new_module import awesome_diagnostic
 >The cell magic in the first two lines automatically reloads your function
 so that you can make changes to `project_name/new_module.py`, save them, and apply the new function in your notebook without having to reload.
 
-Now the only thing you have to do is write some [unit tests](), to check that your function behaves the way it is expected. These will help to check if changes you make in the future affect the outputs.
+Now the only thing you have to do is write some [unit tests](https://docs.pytest.org/en/latest/), to check that your function behaves the way it is expected. These will help to check if changes you make in the future affect the outputs.
 
  Organize the test function `test_awesome_diagnostic` in a new test module `project_name/test_new_module.py` (an example is provided as `dummy.py` and `test_dummy.py` in the appropriate folders) to check the output of `awesome_diagnostic`.
 
@@ -168,3 +168,17 @@ Its one switch and everything else is already set up!
 Now every time you push changes to your repository, travis downloads your package and the dependencies and runs all the tests. This way you can quickly identify if recent changes broke some of your code.
 
 > In order for travis to get all the necessary dependencies we use the `ci/requirements-py37.yml`. This is set up in the same way as `environment.yml`, and you have to make sure that the necessary packages are in both files. Some packages that are purely for interactive work like e.g. `jupyter`, do not need to be included in the `ci/requirements-py37.yml` environment file.
+
+#### General Principals
+All the suggestions are just that - suggestions. Feel free to change things around
+and experiment until you find the perfect workflow.
+
+I think that generally a set of principles should apply:
+- __Avoid repetions__: That means for example to link a datatset into the `data/raw` folder and read it in several notebooks with something like `xr.open_dataset('../data/raw/dataset.nc')` or to refactor and generalize functions into the source code and import it into notebooks as needed, instead of keeping very similar or copied function definition in each notebook.
+- __Document as you go__: You will rarely do it afterwards, and if that happens it will be a pain! When you develop a function you usually write little snippets of code to test it out. Take the extra time to convert them into unittests. Test are a great way of documenting what functions are supposed to do! The same principal applies to other documentation. If you can structure data the way that it is self-explanatory, that helps more than a long README (but also write the README to get people started please!).
+Use your notebooks to present results without code ([example](https://github.com/jbusecke/guides/blob/master/analysis_sharing_workflow.md)), instead of writing up the same passages in an email with a bunch of loose figures. Your collaborators/advisors/mum will thank you!
+
+If you have suggestions, feel free to raise an issue or submit a pull request.
+Until then SCIENCE ON!
+
+![](https://media.giphy.com/media/d3mlYwpf96kMuFjO/giphy.gif)
