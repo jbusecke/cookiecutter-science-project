@@ -48,6 +48,7 @@ In the directory created by cookiecutter do
 ```bash
 $ ./scripts/setup.sh
 ```
+The script will prompt your github password to create the repository in your account.
 
 Now configure the packages you will need (you can add more later) in the 'environment.yml' file and create a conda environment
 
@@ -107,7 +108,7 @@ Head over to [cookiecutter-data-science](https://drivendata.github.io/cookiecutt
 Keeping all the elements of your project contained in this structure ensures that you can port the project from your laptop to a cluster or share it easily with other people.
 
 #### Version control with git
-The setup has already created a matching [github repository]() to your local project folder to get you started.
+The setup has already created a matching github repository([example based on this readme](https://github.com/jbusecke/project_name)) to your local project folder to get you started.
 Just add, commit and push any changes you make regularly to have a backed up history of your project.  
 
 #### `data` folder
@@ -150,7 +151,16 @@ Now the only thing you have to do is write some [unit tests](https://docs.pytest
 
 Over time you will accumulate test for all of your functions, and you can check if they all pass without errors
 ```
-py.test project_name
+$ py.test project_name
+>>> ============================================ test session starts ============================================
+>>> platform darwin -- Python 3.7.3, pytest-4.4.0, py-1.8.0, pluggy-0.9.0
+>>> rootdir: /Users/juliusbusecke/Desktop/final_testing/project_name
+>>> collected 2 items
+>>>
+>>> project_name/tests/test_dummy.py .                                                                    [ 50%]
+>>> project_name/tests/test_new_module.py .                                                               [100%]
+>>>
+>>> ========================================= 2 passed in 0.08 seconds ==========================================
 ```
 
 Some general guidelines for when to migrate your functions from notebook to source code:
@@ -163,7 +173,7 @@ Now at some point, you might want to use one or several of these functions in an
 #### Continous integration
 So unit-test seem cool, but do you want to run these tests all the time? Of course you dont!
 
-So head over to [travis](https://travis-ci.org/) and log in with your gitub account and follow the instructions for activating your github repo.
+So head over to [travis](https://travis-ci.com/) and log in with your github account and follow the instructions for activating your github repo.
 Its one switch and everything else is already set up!
 Now every time you push changes to your repository, travis downloads your package and the dependencies and runs all the tests. This way you can quickly identify if recent changes broke some of your code.
 
