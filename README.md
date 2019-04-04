@@ -1,46 +1,67 @@
 # Cookiecutter Science Project
 
-_A slim cookiecutter template for science projects._
+_A slim cookiecutter template for reproducible science projects._
 
+If you want to start a science project fast, but still encourage good coding practices and reproducibility without spending hours on the setup this template is for you.
 
-Inspired by [cookiecutter-science-project](https://github.com/jbusecke/cookiecutter-science-project)
+You have just started with python and learning all the great elements of the stack seems overwhelming? Just follow the quickstart guide and have everything set up to 'level up' seamlessly along the way.
 
+This work is modified from [cookiecutter-data-science](https://drivendata.github.io/cookiecutter-data-science/) with some modifications targeted towards earth scientist, but general enough for other fields aswell.
 
 ### Requirements to use the cookiecutter template:
------------
- - Python 2.7 or 3.5
- - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: This can be installed with pip by or conda depending on how you manage your Python packages:
+ - A [github](https://github.com/) account.
+ - [Conda package manager]()
+ - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html)
+
+You can install [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) easily with conda.
 
 ``` bash
-$ pip install cookiecutter
-```
-
-or
-
-``` bash
-$ conda - c conda-forge install cookiecutter
+$ conda -c conda-forge install cookiecutter
 ```
 
 
-### To start a new project, run:
-------------
+
+### Quickstart
+To start a new project, run:
 ``` bash
 $ cookiecutter https://github.com/jbusecke/cookiecutter-science-project
 ```
 If you have previously created a package with this template confirm the prompt to redownload the newest version.
 The installation dialog will ask for a few inputs:
 - `project_name`: The name of the project. This will be used as package name and repository name on github for consistency (whitespaces will be replaced with underscores).
-- `repo_private`: Chose between a private or public github repository. Be aware that some of the steps below differ for private and public repositories.
+- `repo_private`: Chose between a private (`true`) or public (`false`) github repository. Be aware that some of the steps below differ for private and public repositories.
 - `author_name`: Your name.
 - `github_username`: Your username for [github](https://github.com).
 - `description`: A short description of the project for the readme.
 - `open_source_license`: Chose a license for your package. Currently available licenses are: "MIT" and "BSD-3-Clause", details can be found [here]().
 - `python_interpreter`: Chose your python version. In most cases just press enter to chose python 3.
+> Unfortunately there seems to be a bug that does [not allow backspace](https://github.com/audreyr/cookiecutter/issues/875) in cookiecutter on certain platforms. If you make a typo cancel the input `ctrl+c` and start over again.
 
-### The resulting directory structure
-------------
+The directory includes a simple setup script, which will create a github repository and commit the current state as initial commit.
 
-This will set up a project folder with the following structure in the current directory:
+In the directory created by cookiecutter do
+
+```bash
+$ ./scripts/setup.sh
+```
+
+Now configure the packages you will need (you can add more later) in the 'environment.yml' file and create a conda environment
+
+```
+$ conda env create -f environment.yml
+```
+
+That's it for the setup. You can now go ahead and start your scientific analysis with the following steps.
+
+```
+cd project_name
+conda activate project_name
+jupyter-lab
+```
+
+### Organization and additional features
+
+Your `project_name` folder should look like this:
 
 ```
 ├── setup.py
@@ -48,12 +69,10 @@ This will set up a project folder with the following structure in the current di
 ├── LICENSE
 ├── environment.yml       <- Conda environment file. Create environment with
 │                           `conda env create -f environment.yml`
-├── .travis.yml           <- Conda environment file. Create environment with
-│                           `conda env create -f environment.yml`
-├── .stickler.yml         <- Conda environment file. Create environment with
-│                           `conda env create -f environment.yml`
+├── .travis.yml           <- Config file for Travis CI
+├── .stickler.yml         <- Config file for Stickler
 ├── scripts              
-│   └── setup.sh          <- Shell script to initialize new project. C
+│   └── setup.sh          <- Shell script to initialize new project.
 │
 ├── references            <- Data dictionaries, manuals, and all other explanatory materials.
 │
@@ -75,42 +94,70 @@ This will set up a project folder with the following structure in the current di
     ├── dummy.py          <- Example python module file. These contain your installable functions
     |
     └── tests
-        └── test_dummy.py
+        └── test_dummy.py <- Test modules corresponding to your module files.
 ```
 
+The suggested workflow revolves around a preset folder structure. Combined with a set of rules this eliminates the effort to make decisions about directory structure and organization, freeing up mental energy and making the repository mor intuitive to understand.
+Head over to [cookiecutter-data-science](https://drivendata.github.io/cookiecutter-data-science/) for a nice discussion.
 
+Keeping all the elements of your project contained in this structure ensures that you can port the project from your laptop to a cluster or share it easily with other people.
 
+#### Version control with git
+The setup has already created a matching [github repository]() to your local project folder to get you started.
+Just add, commit and push any changes you make regularly to have a backed up history of your project.  
 
-The directory includes a simple setup script, which will create a github repository and commit the current state as initial commit.
+#### `data` folder
+Contents of the data folder should not be committed to the github repository. Ideally a script in `scripts` is used to download publicly available data into the `data/raw` folder. In climate science, some datasets (like large global climate model datasets) might not be available publicly or are simply too large to download quickly. In this case I recommend linking the files (using absolute filepaths) into the `data/raw` folders using a script(which itself should reside in `scripts`).
+> No content of `data/raw` should ever be modified manually.
 
-In the directory created by cookiecutter do
+Often the raw data has to be subset, cleaned or preprocessed in some other way. I recommend to maintain a [jupyter notebook]() in `notebooks` which reads data from `data/raw` and writes into `data/processed`.
 
-```bash
-$ ./scripts/setup.sh
+This method ensures that anyone can reproduce the same results given the identical source data. It is also to a large part self-documenting.
+
+#### `notebook` folder
+[jupyter notebook]() are a phenomenal tool. They combine code, notes, math, pictures etc in a single container. They tend to get messy quickly over time.
+To keep tidy and presentable notebooks:
+- Properly name your notebooks. Pick a format (e.g. '<running_no><author><short_description>.ipynb') and stick to it.
+- Keep code in notebooks to a minimum. Ideally you want to have only short code cells to visualize data and refactor larger functions into the projects source code (see below)
+
+#### The source code
+A bunch of notebooks with thousands of line of code is not a great way to design reproducible science. Using this template your project turns into an installable python package.
+
+Lets say you start exploring some data and then develop a set of functions to calculate some fancy new way to quantify something, calculated in a function `awesome_diagnostic`.  
+
+Wouldnt it be nice if some other researcher could just install your project and try this new method out on a different dataset?
+You can easily move code out of your notebooks into a new python module `project_name/new_module.py`.
+When you install your package with
+```
+$ python setup.py develop
+```
+you can import your function `awesome_diagnostic` in a notebook with
+```python
+%load_ext autoreload
+%autoreload 2
+from project_name.new_module import awesome_diagnostic
+```
+>The cell magic in the first two lines automatically reloads your function
+so that you can make changes to `project_name/new_module.py`, save them, and apply the new function in your notebook without having to reload.
+
+Now the only thing you have to do is write some [unit tests](), to check that your function behaves the way it is expected. These will help to check if changes you make in the future affect the outputs.
+
+ Organize the test function `test_awesome_diagnostic` in a new test module `project_name/test_new_module.py` (an example is provided as `dummy.py` and `test_dummy.py` in the appropriate folders) to check the output of `awesome_diagnostic`.
+
+Over time you will accumulate test for all of your functions, and you can check if they all pass without errors
+```
+py.test project_name
 ```
 
-Now head over to [travis](https://travis-ci.org/), ...
-For each service log in with your github account and follow the instructions for activating your github repo.
-> It can take a while until new repos show up in travis. Just get a cup of coffee or have a nice chat with your office mate.
+Some general guidelines for when to migrate your functions from notebook to source code:
+- __When you want to use the same function in several notebooks__. No need to copy paste functions and then have two slightly different versions evolve over time. Aim to make your function as general as needed and maintain it in the source code.
+- __When functions get to long__. As mentioned before, notebooks should be used for initial testing, exploration and then vizualization of result.
+If your function definitions take over the majority of your notebook, refactor and clean them up into the source code.
 
-You can check if everything is working properly by committing some text to the readme, or just get straight to analysis!
+Now at some point, you might want to use one or several of these functions in another project. This is the time to create a separate toolbox and migrate your code. The great thing is, that all the work is done already. All you have to do is copy the module/function and corresponding test (You did write tests, right?) to the new repository and change the import statements at the beginning of the appropriate notebooks. Thats it!
 
-
-
-
-
-
-
-## Contributing
-
-We welcome contributions! [See the docs for guidelines](https://drivendata.github.io/cookiecutter-data-science/#contributing). -->
-
-<!-- ### Installing development requirements
-------------
-
-    pip install -r requirements.txt
-
-### Running the tests
-------------
-
-    py.test tests -->
+#### Continous integration
+So unit-test seem cool, but do you want to run these tests all the time? Of course you dont. So head over to [travis](https://travis-ci.org/) and log in with your gitub account and follow the instructions for activating your github repo.
+Its one switch and everything else is already set up!
+Now every time you push changes to your repository, travis downloads your package and the dependencies and runs all the tests. This way you can quickly identify if recent changes broke some of your code.
+> In order for travis to get all the necessary dependencies we use the `ci/requirements-py37.yml`. This is set up in the same way as `environment.yml`, and you have to make sure that the necessary packages are in both files. Some packages that are purely for interactive work like e.g. `jupyter`, do not need to be included in the `ci/requirements-py37.yml` environment file.
