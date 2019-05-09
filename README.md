@@ -21,7 +21,7 @@ This work is modified from [cookiecutter-data-science](https://drivendata.github
 You can install [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) easily with conda.
 
 ``` bash
-$ conda -c conda-forge install cookiecutter
+$ conda install -c conda-forge cookiecutter
 ```
 
 
