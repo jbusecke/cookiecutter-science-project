@@ -10,3 +10,4 @@ dependencies:
   - xarray
   - numpy
   - pandas
+  - matplotlib
