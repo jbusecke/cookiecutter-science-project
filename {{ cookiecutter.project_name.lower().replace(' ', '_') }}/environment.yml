@@ -5,6 +5,7 @@ dependencies:
   # Required for full project functionality (dont remove)
   - pytest
   # Examples (remove and add as needed)
+  - python=3.7
   - jupyter
   - jupyterlab
   - xarray
