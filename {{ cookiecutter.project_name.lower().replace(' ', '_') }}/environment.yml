@@ -9,5 +9,8 @@ dependencies:
   - jupyterlab
   - xarray
   - numpy
+  - scipy
+  - dask
+  - netcdf4
   - pandas
   - matplotlib
