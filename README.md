@@ -32,6 +32,7 @@ To start a new project, run:
 $ cookiecutter https://github.com/jbusecke/cookiecutter-science-project
 ```
 (*this should be run from the location that you want the project folder to live, or you will need to move the directory around later.*)
+
 If you have previously created a package with this template confirm the prompt to redownload the newest version.
 The installation dialog will ask for a few inputs:
 - `project_name`: The name of the project. This will be used as package name and repository name on github for consistency (whitespaces will be replaced with underscores).
