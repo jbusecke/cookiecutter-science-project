@@ -31,6 +31,8 @@ To start a new project, run:
 ``` bash
 $ cookiecutter https://github.com/jbusecke/cookiecutter-science-project
 ```
+(*this should be run from the location that you want the project folder to live, or you will need to move the directory around later.*)
+
 If you have previously created a package with this template confirm the prompt to redownload the newest version.
 The installation dialog will ask for a few inputs:
 - `project_name`: The name of the project. This will be used as package name and repository name on github for consistency (whitespaces will be replaced with underscores).
@@ -113,7 +115,7 @@ The setup has already created a matching github repository([example based on thi
 Just add, commit and push any changes you make regularly to have a backed up history of your project.  
 
 #### `data` folder
-Contents of the data folder should not be committed to the github repository. Ideally a script in `scripts` is used to download publicly available data into the `data/raw` folder. In climate science, some datasets (like large global climate model datasets) might not be available publicly or are simply too large to download quickly. In this case I recommend linking the files (using absolute filepaths) into the `data/raw` folders using a script(which itself should reside in `scripts`).
+Contents of the data folder should not be committed to the github repository (*the data folder can be included to the .gitignore file - scroll the bottom of the .gitignore in the template*) . Ideally a script in `scripts` is used to download publicly available data into the `data/raw` folder. In climate science, some datasets (like large global climate model datasets) might not be available publicly or are simply too large to download quickly. In this case we recommend linking the files (using absolute filepaths) into the `data/raw` folders using a script(which itself should reside in `scripts`).
 > No content of `data/raw` should ever be modified manually.
 
 Often the raw data has to be subset, cleaned or preprocessed in some other way. I recommend to maintain a [jupyter notebook]() in `notebooks` which reads data from `data/raw` and writes into `data/processed`.
