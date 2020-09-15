@@ -53,6 +53,8 @@ $ ./scripts/setup.sh
 ```
 The script will prompt your github password to create the repository in your account.
 
+*NOTE* Remote access to GitHub is, by default, via an SSH key (see [here](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)). If you do not have key-pair authentication set up from your current machine, this stage will fail when it tries to push the new repository to GitHub. So, you should either have a key-pair setup for the machine you are working on before invoking this setup (highly recommended) or, after this setup fails, change remote access to HTTP using `git remote set-url` (see [here](https://docs.github.com/en/enterprise/2.15/user/articles/changing-a-remotes-url). The repository can then be pushed to GitHub in the usual way (`git push -u origin master`), entering your username and password each time. 
+
 Now configure the packages you will need (you can add more later) in the 'environment.yml' file and create a conda environment
 
 ```
