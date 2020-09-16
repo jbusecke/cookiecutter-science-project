@@ -15,7 +15,7 @@ This work is modified from [cookiecutter-data-science](https://drivendata.github
 
 ### Requirements to use the cookiecutter template:
  - A [github](https://github.com/) account.
-   - Note that [account authentication via SSH key-pair](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)) should be set up before initializing repositories using cookiecutter.
+   - Note that your account must be set up for [authentication via SSH key-pair](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) before initializing repositories using cookiecutter.
  - [Conda package manager](https://conda.io/en/latest/)
  - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html)
 
