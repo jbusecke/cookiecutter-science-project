@@ -15,6 +15,7 @@ This work is modified from [cookiecutter-data-science](https://drivendata.github
 
 ### Requirements to use the cookiecutter template:
  - A [github](https://github.com/) account.
+   - Note that your account must be set up for [authentication via SSH key-pair](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) before initializing repositories using cookiecutter.
  - [Conda package manager](https://conda.io/en/latest/)
  - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html)
 
@@ -52,6 +53,8 @@ In the directory created by cookiecutter do
 $ ./scripts/setup.sh
 ```
 The script will prompt your github password to create the repository in your account.
+
+*NOTE* This step will fail when attempting to push the new repository to GitHub if you have not yet set up SSH key-pair authentication (see [here](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)).
 
 Now configure the packages you will need (you can add more later) in the 'environment.yml' file and create a conda environment
 
