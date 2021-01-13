@@ -21,6 +21,7 @@ dependencies:
   - ipython
   - ipykernel # not strictly necessary but this is nice to run notebooks in this env to test
   - pandoc
+  - recommonmark
   - pip
   - pip:
     - docrep<=0.2.7
@@ -91,10 +92,18 @@ Build the environment with `conda create env -f docs/environment.yml, and activa
     ```
     html_theme = "pangeo"
     ```
+  - If you want to be able to conveniently link to issues and PRs in the `whats-new.rst` file (see example over at [xarray](https://github.com/pydata/xarray/blob/master/doc/whats-new.rst)), add this to `conf.py`:
+  ```
+  # link to github issues
+  extlinks = {
+      "issue": ("https://github.com/<user/org>/<repo>/issues/%s", "GH#"),
+      "pull": ("https://github.com/<user/org>/<repo>/issues/%s", "GH#"),
+  }
+  ```
 5. Build the first version of the docs locally with `make html` and look at the local docs page with `open _build/html/index.html`
 6. One of the crucial parts of a good documumentation is the automatic API page. Just create a new `api.rst` with the following content:
   ```rst
-  :mod:`<repo> API`
+  :mod:`API`
   ----------------------------
 
   .. automodule:: <repo>.module
