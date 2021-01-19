@@ -15,7 +15,7 @@ An example repository can be found [here](https://github.com/jbusecke/project_na
 
 This work is modified from [cookiecutter-data-science](https://drivendata.github.io/cookiecutter-data-science/) with some modifications targeted towards earth scientist, but general enough for other fields aswell.
 
-### Requirements to use the cookiecutter template:
+## Requirements to use the cookiecutter template:
  - A [github](https://github.com/) account.
    - Note that your account must be set up for [authentication via SSH key-pair](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) before initializing repositories using cookiecutter.
  - [Conda package manager](https://conda.io/en/latest/)
@@ -27,7 +27,7 @@ You can install [Cookiecutter Python package](http://cookiecutter.readthedocs.or
 $ conda install -c conda-forge cookiecutter
 ```
 
-### Quickstart
+## Quickstart
 To start a new project, run:
 ``` bash
 $ cookiecutter https://github.com/jbusecke/cookiecutter-science-project
@@ -44,7 +44,7 @@ The installation dialog will ask for a few inputs:
 - `python_interpreter`: Chose your python version. In most cases just press enter to chose python 3.
 > Unfortunately there seems to be a bug that does [not allow backspace](https://github.com/audreyr/cookiecutter/issues/875) in cookiecutter on certain platforms. If you make a typo cancel the input `ctrl+c` and start over again.
 
-#### Setting up git/github
+### Setting up git/github
 
 To initialize a git repository in the folder, navigate to your project folder that was just created and do
 ```
@@ -64,7 +64,7 @@ and follow the instructions. You might have to authenticate this if you are usin
 Now all you need to do is commit the files and push them (the remote has already been set by the previous command).
 
 
-#### Configuring the conda environment
+### Configuring the conda environment
 
 Now configure the packages you will need (you can add more later) in the 'environment.yml' file and create a conda environment
 
@@ -80,7 +80,29 @@ conda activate project_name
 jupyter-lab
 ```
 
-### Organization and additional features
+## How to release your package
+
+To make your software easily accessible for others you want to package and release it so others can install
+it easily. The most common ways to install python packages are [pypi]() and [conda]().
+
+### Pypi
+Releasing on pypi is already built into the CI. You only have to follow these 3 simple steps:
+1. Get an account on [pypi](https://pypi.org)
+2. Enter your username and passwords in the Settings > Secrets Menu of your repository. They need to be named `PIPY_USERNAME` and `PIPY_PASSWORD` respectively (watch the spelling!)
+3. Release a new version by clicking on `Releases` in the right sidebar and then `Draft a new release`. 
+Thats it!
+
+Now you can install your released version of your package with
+```
+pip install <yourpackagename>
+```
+
+### conda
+Instructions coming soon.
+
+
+
+## Organization and additional features
 
 Your `project_name` folder should look like this:
 
