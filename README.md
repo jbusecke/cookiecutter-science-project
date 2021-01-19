@@ -1,3 +1,5 @@
+[![Build Status](https://img.shields.io/github/workflow/status/jbusecke/cookiecutter-science-project/CI?logo=github)](https://github.com/jbusecke/cookiecutter-science-project/actions)
+
 # Cookiecutter Science Project
 
 ---------------

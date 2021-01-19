@@ -1,0 +1,9 @@
+# pyproject.toml
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-v"
+# only test the root level, otherwise it picks up the tests of the project template
+testpaths = [
+    "tests",
+]
+ignore = "{{ cookiecutter.project_name.lower().replace(' ', '_') }}"
