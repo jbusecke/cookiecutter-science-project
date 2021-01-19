@@ -38,6 +38,7 @@ If you have previously created a package with this template confirm the prompt t
 The installation dialog will ask for a few inputs:
 - `project_name`: The name of the project. This will be used as package name and repository name on github for consistency (whitespaces will be replaced with underscores).
 - `author_name`: Your name.
+- `github_name`: The github username (or orgnization) that you want to use for the remote repository.
 - `description`: A short description of the project for the readme.
 - `open_source_license`: Chose a license for your package. Currently available licenses are: "MIT" and "BSD-3-Clause", details can be found [here]().
 - `python_interpreter`: Chose your python version. In most cases just press enter to chose python 3.
