@@ -27,8 +27,6 @@ You can install [Cookiecutter Python package](http://cookiecutter.readthedocs.or
 $ conda install -c conda-forge cookiecutter
 ```
 
-
-
 ### Quickstart
 To start a new project, run:
 ``` bash
@@ -39,24 +37,30 @@ $ cookiecutter https://github.com/jbusecke/cookiecutter-science-project
 If you have previously created a package with this template confirm the prompt to redownload the newest version.
 The installation dialog will ask for a few inputs:
 - `project_name`: The name of the project. This will be used as package name and repository name on github for consistency (whitespaces will be replaced with underscores).
-- `repo_private`: Chose between a private (`true`) or public (`false`) github repository. Be aware that some of the steps below differ for private and public repositories.
 - `author_name`: Your name.
-- `github_username`: Your username for [github](https://github.com).
 - `description`: A short description of the project for the readme.
 - `open_source_license`: Chose a license for your package. Currently available licenses are: "MIT" and "BSD-3-Clause", details can be found [here]().
 - `python_interpreter`: Chose your python version. In most cases just press enter to chose python 3.
 > Unfortunately there seems to be a bug that does [not allow backspace](https://github.com/audreyr/cookiecutter/issues/875) in cookiecutter on certain platforms. If you make a typo cancel the input `ctrl+c` and start over again.
 
-The directory includes a simple setup script, which will create a github repository and commit the current state as initial commit.
+#### Setting up git/github
 
-In the directory created by cookiecutter do
-
-```bash
-$ ./scripts/setup.sh
+To initialize a git repository in the folder, navigate to your project folder that was just created and do
 ```
-The script will prompt your github password to create the repository in your account.
+git init
+```
 
-*NOTE* This step will fail when attempting to push the new repository to GitHub if you have not yet set up SSH key-pair authentication (see [here](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)).
+We now want to connect this local repository to a github repo. This can be done directly from the command line using the [Github Command Line Interface](https://github.com/cli/cli#installation). You will have to install it following one of the methods described [here](https://github.com/cli/cli#installation)
+
+Now (from the project root folder) you can simply do:
+```shell
+gh repo create 
+```
+and follow the instructions. You might have to authenticate this if you are using it for the first time, but this should all be explained by prompts in the command line. 
+
+> If you want your repository to be private, you can simply do `gh repo create --private` instead of the above.
+
+#### Configuring the conda environment
 
 Now configure the packages you will need (you can add more later) in the 'environment.yml' file and create a conda environment
 
@@ -83,9 +87,6 @@ Your `project_name` folder should look like this:
 ├── environment.yml       <- Conda environment file. Create environment with
 │                           `conda env create -f environment.yml`
 ├── .travis.yml           <- Config file for Travis CI
-├── .stickler.yml         <- Config file for Stickler
-├── scripts              
-│   └── setup.sh          <- Shell script to initialize new project.
 │
 ├── references            <- Data dictionaries, manuals, and all other explanatory materials.
 │
