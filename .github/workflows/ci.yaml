@@ -31,10 +31,10 @@ jobs:
           key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('ci/environment-py${{ matrix.python-version }}.yml') }}
       - uses: conda-incubator/setup-miniconda@v2
         with:
-          activate-environment: test_env_xgcm # Defined in ci/environment*.yml
+          activate-environment: test_env_cookiecutter_science_project # Defined in ci/environment*.yml
           auto-update-conda: false
           python-version: ${{ matrix.python-version }}
-          environment-file: requirements.txt
+          environment-file: ci/environment-py${{ matrix.python-version }}.yml
           use-only-tar-bz2: true # IMPORTANT: This needs to be set for caching to work properly!
       - name: Set up conda environment
         shell: bash -l {0}
