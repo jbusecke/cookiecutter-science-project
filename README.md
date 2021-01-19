@@ -59,7 +59,10 @@ gh repo create
 ```
 and follow the instructions. You might have to authenticate this if you are using it for the first time, but this should all be explained by prompts in the command line. 
 
-> If you want your repository to be private, you can simply do `gh repo create --private` instead of the above.
+> Hint: If you want your repository to be private, you can simply do `gh repo create --private` instead of selecting it from the prompts.
+
+Now all you need to do is commit the files and push them (the remote has already been set by the previous command).
+
 
 #### Configuring the conda environment
 
@@ -203,3 +206,13 @@ If you have suggestions, feel free to raise an issue or submit a pull request.
 Until then SCIENCE ON!
 
 ![](https://media.giphy.com/media/LXr2Uxk2xUO2I/giphy.gif)
+
+
+## Developer notes
+
+The template has some rudimentary tests, but in order to test a PR/branch in a real world scenario, I currently submit the PR and then check out the corresponding branch with:
+```shell
+cookiecutter https://github.com/jbusecke/cookiecutter-science-project --checkout <pr_branch>
+```
+
+That way I can test the full workflow including setting up a github repo and pushing to there.
