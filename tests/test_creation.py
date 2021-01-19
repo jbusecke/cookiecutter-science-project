@@ -101,17 +101,18 @@ class TestCookieSetup(object):
             'data/raw',
             # 'docs',
             'notebooks',
-            'references',
-            'scripts',
         ]
 
         ignored_dirs = [
             str(self.path),
+            str(self.path) + '/' +name+ '/tests/__pycache__'
         ]
 
         abs_expected_dirs = [str(self.path / d) for d in expected_dirs]
         abs_dirs, _, _ = list(zip(*os.walk(self.path)))
-        unexpected_dirs = set(abs_expected_dirs + ignored_dirs) - set(abs_dirs)
-        assert set(abs_expected_dirs + ignored_dirs) == set(abs_dirs)
+        # remove dirs that should be ignored, dont do anything if they dont exist.
+        abs_dirs_select = set(abs_dirs) - set(ignored_dirs)
+    
+        assert set(abs_expected_dirs) == set(abs_dirs_select)
 
 

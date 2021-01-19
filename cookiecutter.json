@@ -1,6 +1,7 @@
 {
     "project_name": "project_name",
     "author_name": "Your name (or your organization/company/team)",
+    "github_username": "Destination github org or username",
     "description": "A short description of the project.",
     "open_source_license": [
         "MIT",
