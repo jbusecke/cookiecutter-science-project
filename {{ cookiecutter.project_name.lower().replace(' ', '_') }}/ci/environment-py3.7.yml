@@ -2,7 +2,7 @@ name: test_env_{{ cookiecutter.project_name.lower().replace(' ', '_') }}
 channels:
   - conda-forge
 dependencies:
-  -python=3.7
+  - python=3.7
   ############## These will have to be adjusted to your specific project
   - numpy
   - scipy
