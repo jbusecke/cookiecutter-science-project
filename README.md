@@ -11,7 +11,7 @@ If you want to start a science project fast, but still encourage good coding pra
 
 You have just started with python and learning all the great elements of the stack seems overwhelming? Just follow the quickstart guide and have everything set up to 'level up' seamlessly along the way.
 
-An example repository can be found [here](https://github.com/jbusecke/project_name)
+This will enable you to setup a repository like [this](https://github.com/jbusecke/cookiecutter-science-project_demo_repo) in minutes, and you can go right back to populating it with amazing science!
 
 This work is modified from [cookiecutter-data-science](https://drivendata.github.io/cookiecutter-data-science/) with some modifications targeted towards earth scientist, but general enough for other fields aswell.
 
@@ -100,6 +100,17 @@ pip install <yourpackagename>
 ### conda
 Instructions coming soon.
 
+## Documentation
+Coming soon
+
+## Optional "nice to have" features
+
+### Code linting
+
+Coming soon
+
+
+
 
 
 ## Organization and additional features
@@ -143,7 +154,7 @@ Head over to [cookiecutter-data-science](https://drivendata.github.io/cookiecutt
 Keeping all the elements of your project contained in this structure ensures that you can port the project from your laptop to a cluster or share it easily with other people.
 
 #### Version control with git
-The setup has already created a matching github repository([example based on this readme](https://github.com/jbusecke/project_name)) to your local project folder to get you started.
+The setup has already created a matching github repository([example based on this readme](https://github.com/jbusecke/cookiecutter-science-project_demo_repo)) to your local project folder to get you started.
 Just add, commit and push any changes you make regularly to have a backed up history of your project.  
 
 #### `data` folder
