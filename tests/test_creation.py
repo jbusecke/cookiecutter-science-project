@@ -6,8 +6,8 @@ from conftest import system_check
 
 from sys import platform
 
-if 'win' in platform and sys.version.split(' ')[0] < '3.8':
-    pytest.skip('Something doesnt work with windows paths for python <3.8')
+if 'win32' == platform and sys.version.split(' ')[0] < '3.8':
+    pytestmark = pytest.mark.skip('Something doesnt work with windows paths for python <3.8')
 
 def no_curlies(filepath):
     """ Utility to make sure no curly braces appear in a file.
