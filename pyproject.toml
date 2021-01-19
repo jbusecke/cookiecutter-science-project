@@ -1,3 +1,4 @@
+# pyproject.toml
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = "-v"
@@ -5,3 +6,4 @@ addopts = "-v"
 testpaths = [
     "tests",
 ]
+ignore = "{{ cookiecutter.project_name.lower().replace(' ', '_') }}"
