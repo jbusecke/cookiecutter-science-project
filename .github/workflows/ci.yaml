@@ -21,6 +21,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      
       - name: Cache conda
         uses: actions/cache@v1
         env:
@@ -29,6 +30,7 @@ jobs:
         with:
           path: ~/conda_pkgs_dir
           key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('ci/environment-py${{ matrix.python-version }}.yml') }}
+      
       - uses: conda-incubator/setup-miniconda@v2
         with:
           channels: conda-forge
@@ -38,11 +40,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
           environment-file: ci/environment-py${{ matrix.python-version }}.yml
           use-only-tar-bz2: true # IMPORTANT: This needs to be set for caching to work properly!
-      - name: Set up conda environment
-        shell: bash -l {0}
-        run: |
-          python -m pip install -e . --no-deps
-          conda list
+
       - name: Run Tests
         shell: bash -l {0}
         run: |
