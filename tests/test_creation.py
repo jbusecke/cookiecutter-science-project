@@ -92,7 +92,10 @@ class TestCookieSetup(object):
         name = self.get_project_name().lower().replace(' ','_')
         expected_dirs = [
             name,
-            name+'/tests',
+            '.github',
+            '.github/workflows',
+            '.github/workflows/optional',
+            'tests',
             'ci',
             'data',
             'data/external',
@@ -105,7 +108,7 @@ class TestCookieSetup(object):
 
         ignored_dirs = [
             str(self.path),
-            str(self.path) + '/' +name+ '/tests/__pycache__'
+            str(self.path)+'/tests/__pycache__'
         ]
 
         abs_expected_dirs = [str(self.path / d) for d in expected_dirs]
