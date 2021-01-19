@@ -101,11 +101,11 @@ class TestCookieSetup(object):
         ]
 
         ignored_dirs = [
-            str(self.path)
+            str(self.path),
         ]
 
         abs_expected_dirs = [str(self.path / d) for d in expected_dirs]
         abs_dirs, _, _ = list(zip(*os.walk(self.path)))
         unexpected_dirs = set(abs_expected_dirs + ignored_dirs) - set(abs_dirs)
-        assert len(unexpected_dirs) == 0
+        assert set(abs_expected_dirs + ignored_dirs) == set(abs_dirs)
 
