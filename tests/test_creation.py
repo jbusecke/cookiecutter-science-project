@@ -129,6 +129,7 @@ class TestCookieSetup(object):
             str(self.path),
             str(self.path)+'/.git',
             str(self.path)+'/.git/info',
+            str(self.path)+'/.git/branches',
             str(self.path)+'/.git/objects',
             str(self.path)+'/.git/objects/pack',
             str(self.path)+'/.git/objects/info',
