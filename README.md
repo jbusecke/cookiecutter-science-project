@@ -1,4 +1,5 @@
 [![Build Status](https://img.shields.io/github/workflow/status/jbusecke/cookiecutter-science-project/CI?logo=github)](https://github.com/jbusecke/cookiecutter-science-project/actions)
+[![DOI](https://zenodo.org/badge/169483949.svg)](https://zenodo.org/badge/latestdoi/169483949)
 
 # Cookiecutter Science Project
 
