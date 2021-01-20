@@ -126,7 +126,6 @@ class TestCookieSetup(object):
         ]
 
         ignored_dirs = [
-            ''
             '.git',
             '.git/info',
             '.git/refs',
@@ -140,10 +139,10 @@ class TestCookieSetup(object):
             'tests/__pycache__',
         ]
 
-        abs_expected_dirs = [str(self.path.joinpath(d.split('/')) for d in expected_dirs]
-        abs_ignored_dirs = [str(self.path.joinpath(d.split('/')) for d in ignored_dirs]
+        abs_expected_dirs = [str(self.path.joinpath(*d.split('/'))) for d in expected_dirs]
+        abs_ignored_dirs = [str(self.path.joinpath(*d.split('/'))) for d in ignored_dirs] + [str(self.path)]
         abs_dirs, _, _ = list(zip(*os.walk(self.path)))
-        
+
         # remove dirs that should be ignored, dont do anything if they dont exist.
         abs_dirs_select = set(abs_dirs) - set(abs_ignored_dirs)
         print(abs_dirs_select)
