@@ -129,6 +129,7 @@ class TestCookieSetup(object):
             '.git',
             '.git/info',
             '.git/refs',
+            '.git/branches',
             '.git/objects',
             '.git/objects/pack',
             '.git/objects/info',
