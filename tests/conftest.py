@@ -3,6 +3,7 @@ import pytest
 import shutil
 from pathlib import Path
 from cookiecutter import main
+from subprocess import check_output
 
 CCDS_ROOT = Path(__file__).parents[1].resolve()
 
@@ -13,7 +14,7 @@ args = {
         'python_interpreter': 'python'
         }
 args2 = {
-        'project_name': 'CoolStuff',
+        'project_name': 'cool_stuff',
         'author_name': 'Marty McFly',
         'open_source_license': 'MIT',
         'python_interpreter': 'python'
@@ -50,7 +51,14 @@ def default_baked_project(tmpdir_factory, request):
 
     proj = out_dir / pn
     request.cls.path = proj
+    
+    args = ['git', 'init', proj]
+    p = check_output(args)
+    print(p)
+
+    # In order for setuptools_scm to work properly, I need to do a git init in the temp directory
+
     yield 
 
-    # cleanup after
-    shutil.rmtree(out_dir)
+    # # cleanup after
+    # shutil.rmtree(out_dir)
