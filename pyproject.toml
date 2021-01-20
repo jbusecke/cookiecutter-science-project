@@ -6,4 +6,5 @@ addopts = "-v"
 testpaths = [
     "tests",
 ]
-ignore = "{{ cookiecutter.project_name.lower().replace(' ', '_') }}"
+# This is the wrong syntax? I think it doesnt matter anyways...
+# skip = "{{ cookiecutter.project_name.lower().replace(' ', '_') }}"
