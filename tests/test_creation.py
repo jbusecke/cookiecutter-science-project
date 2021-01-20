@@ -126,24 +126,26 @@ class TestCookieSetup(object):
         ]
 
         ignored_dirs = [
-            str(self.path),
-            str(self.path)+'/.git',
-            str(self.path)+'/.git/info',
-            str(self.path)+'/.git/branches',
-            str(self.path)+'/.git/objects',
-            str(self.path)+'/.git/objects/pack',
-            str(self.path)+'/.git/objects/info',
-            str(self.path)+'/.git/refs',
-            str(self.path)+'/.git/refs/heads',
-            str(self.path)+'/.git/refs/tags',
-            str(self.path)+'/.git/hooks',
-            str(self.path)+'/tests/__pycache__',
+            ''
+            '.git',
+            '.git/info',
+            '.git/refs',
+            '.git/objects',
+            '.git/objects/pack',
+            '.git/objects/info',
+            '.git/refs',
+            '.git/refs/heads',
+            '.git/refs/tags',
+            '.git/hooks',
+            'tests/__pycache__',
         ]
 
-        abs_expected_dirs = [str(self.path / d) for d in expected_dirs]
+        abs_expected_dirs = [str(self.path.joinpath(d.split('/')) for d in expected_dirs]
+        abs_ignored_dirs = [str(self.path.joinpath(d.split('/')) for d in ignored_dirs]
         abs_dirs, _, _ = list(zip(*os.walk(self.path)))
+        
         # remove dirs that should be ignored, dont do anything if they dont exist.
-        abs_dirs_select = set(abs_dirs) - set(ignored_dirs)
+        abs_dirs_select = set(abs_dirs) - set(abs_ignored_dirs)
         print(abs_dirs_select)
     
         assert set(abs_expected_dirs) == set(abs_dirs_select)
