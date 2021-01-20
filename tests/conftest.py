@@ -12,6 +12,12 @@ args = {
         'open_source_license': 'BSD-3-Clause',
         'python_interpreter': 'python'
         }
+args2 = {
+        'project_name': 'CoolStuff',
+        'author_name': 'Marty McFly',
+        'open_source_license': 'MIT',
+        'python_interpreter': 'python'
+}
 
 
 def system_check(basename):
@@ -21,12 +27,15 @@ def system_check(basename):
     return basename
 
 
-@pytest.fixture(scope='class', params=[{}, args])
+@pytest.fixture(scope='class', params=[{}, args, args2])
 def default_baked_project(tmpdir_factory, request):
     temp = tmpdir_factory.mktemp('data-project')
     out_dir = Path(temp).resolve()
 
     pytest.param = request.param
+
+    print(pytest.param)
+
     main.cookiecutter(
         str(CCDS_ROOT),
         no_input=True,

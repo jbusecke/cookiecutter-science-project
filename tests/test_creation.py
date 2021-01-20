@@ -31,7 +31,7 @@ def no_curlies(filepath):
 class TestCookieSetup(object):
     def get_project_name(self):
         if pytest.param.get('project_name'):
-            pname = system_check('DrivenData')
+            pname = pytest.param.get('project_name')
         else:
             pname = 'project_name'
         return pname
@@ -44,11 +44,13 @@ class TestCookieSetup(object):
     def test_author(self):
         setup_ = self.path / 'setup.py'
         args = ['python', setup_, '--author']
+        print(args)
+        print(check_output(args))
         p = check_output(args).decode('ascii').strip()
         if pytest.param.get('author_name'):
-            assert p == 'DrivenData'
+            assert p == pytest.param.get('author_name')
         else:
-            assert p == 'Your name (or your organization/company/team)'
+            assert p == 'UNKNOWN'
 
     def test_readme(self):
         readme_path = self.path / 'README.md'
@@ -62,10 +64,10 @@ class TestCookieSetup(object):
         setup_ = self.path / 'setup.py'
         args = ['python', setup_, '--version']
         p = check_output(args).decode('ascii').strip()
-        assert p == '0.1.0'
+        assert p == '0.0.0'
 
     def test_license(self):
-        license_path = self.path / 'LICENSE'
+        license_path = self.path / 'LICENSE.txt'
         assert license_path.exists()
         assert no_curlies(license_path)
 
@@ -73,10 +75,14 @@ class TestCookieSetup(object):
         setup_ = self.path / 'setup.py'
         args = ['python', setup_, '--license']
         p = check_output(args).decode('ascii').strip()
-        if pytest.param.get('open_source_license'):
+        print(pytest.param.get('open_source_license'))
+        if pytest.param.get('open_source_license') == 'MIT':
+            assert p == 'MIT'
+        elif pytest.param.get('open_source_license') == "BSD-3-Clause":
             assert p == 'BSD-3'
         else:
-            assert p == 'MIT'
+            assert p == 'UNKNOWN' # no input defaults to MIT
+            
 
     # ! Ill deactivate this for now. Have to find a way to parse requirements from setup cfg
     # def test_requirements(self):
