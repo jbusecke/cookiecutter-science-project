@@ -5,8 +5,9 @@
 {% if cookiecutter.open_source_license == 'MIT' %}[![License:MIT](https://img.shields.io/badge/License-MIT-lightgray.svg?style=flt-square)](https://opensource.org/licenses/MIT){% elif cookiecutter.open_source_license == 'BSD-3-Clause' %}[![License:BSD-3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-lightgray.svg?style=flt-square)](https://opensource.org/licenses/BSD-3-Clause)
 {% endif %}
 [![pypi](https://img.shields.io/pypi/v/{{ cookiecutter.project_name.lower().replace(' ', '_') }}.svg)](https://pypi.org/project/{{ cookiecutter.project_name.lower().replace(' ', '_') }})
-<!-- [![conda-forge](https://img.shields.io/conda/dn/conda-forge/{{ cookiecutter.project_name.lower().replace(' ', '_') }}?label=conda-forge)](https://anaconda.org/conda-forge/{{ cookiecutter.project_name.lower().replace(' ', '_') }})
-[![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.project_name.lower().replace(' ', '_') }}/badge/?version=latest)](https://{{ cookiecutter.project_name.lower().replace(' ', '_') }}.readthedocs.io/en/latest/?badge=latest) -->
+<!-- [![conda-forge](https://img.shields.io/conda/dn/conda-forge/{{ cookiecutter.project_name.lower().replace(' ', '_') }}?label=conda-forge)](https://anaconda.org/conda-forge/{{ cookiecutter.project_name.lower().replace(' ', '_') }}) -->
+[![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.project_name.lower().replace(' ', '_') }}/badge/?version=latest)](https://{{ cookiecutter.project_name.lower().replace(' ', '_') }}.readthedocs.io/en/latest/?badge=latest)
+
 
 {{ cookiecutter.description }}
 
