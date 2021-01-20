@@ -76,17 +76,17 @@ That's it for the setup. You can now go ahead and start your scientific analysis
 
 ```
 cd project_name
-conda activate project_name
+conda activate <project_name>
 jupyter-lab
 ```
 
 ## How to release your package
 
-To make your software easily accessible for others you want to package and release it so others can install
+To make your software accessible for others you want to package and release it so others can install
 it easily. The most common ways to install python packages are [pypi]() and [conda]().
 
 ### Pypi
-Releasing on pypi is already built into the CI. You only have to follow these 3 simple steps:
+Releasing on pypi is already built into the CI. You only have to follow these 4 simple steps:
 1. Get an account on [pypi](https://pypi.org)
 2. Enter your username and passwords in the Settings > Secrets Menu of your repository. They need to be named `PIPY_USERNAME` and `PIPY_PASSWORD` respectively (watch the spelling!)
 3. Fill out the `classifiers` and `install_requires` fields in `setup.cfg`. This will ensure that any dependencies are installed when your package is installed, and your stuff works right out of the box.
