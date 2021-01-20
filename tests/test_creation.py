@@ -132,13 +132,10 @@ class TestCookieSetup(object):
             str(self.path)+'/.git/objects',
             str(self.path)+'/.git/objects/pack',
             str(self.path)+'/.git/objects/info',
-
             str(self.path)+'/.git/refs',
             str(self.path)+'/.git/refs/heads',
             str(self.path)+'/.git/refs/tags',
-
             str(self.path)+'/.git/hooks',
-     
             str(self.path)+'/tests/__pycache__',
         ]
 
@@ -146,6 +143,7 @@ class TestCookieSetup(object):
         abs_dirs, _, _ = list(zip(*os.walk(self.path)))
         # remove dirs that should be ignored, dont do anything if they dont exist.
         abs_dirs_select = set(abs_dirs) - set(ignored_dirs)
+        print(abs_dirs_select)
     
         assert set(abs_expected_dirs) == set(abs_dirs_select)
 
