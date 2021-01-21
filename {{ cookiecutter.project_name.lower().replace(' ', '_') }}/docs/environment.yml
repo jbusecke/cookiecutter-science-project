@@ -1,5 +1,5 @@
 name: {{cookiecutter.project_name.lower().replace(' ', '_')}}_docs
- dependencies:
+dependencies:
    - python=3.8
    # If your docs code examples depend on other packages add them here
    - numpy
