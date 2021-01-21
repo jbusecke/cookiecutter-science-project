@@ -102,7 +102,21 @@ pip install <yourpackagename>
 Instructions coming soon.
 
 ## Documentation
-Coming soon
+The template comes with a fully set up documentation and examples. You can test the docs locally by building the docs conda environment 
+```
+conda env create -f docs/environment.yml
+```
+Then activate the environment and navigate to the `docs` folder and build the html documentation
+```
+make html
+```
+Finally you can open the documentation with
+```
+open _build/html/index.html
+```
+
+### Readthedocs
+
 
 ## Optional "nice to have" features
 
