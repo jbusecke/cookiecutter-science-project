@@ -103,7 +103,25 @@ pip install <yourpackagename>
 Instructions coming soon.
 
 ## Documentation
-Coming soon
+The template comes with a fully set up documentation and examples. You can test the docs locally by building the docs conda environment 
+```
+conda env create -f docs/environment.yml
+```
+Then activate the environment and navigate to the `docs` folder and build the html documentation
+```
+make html
+```
+Finally you can open the documentation with
+```
+open _build/html/index.html
+```
+
+### ReadTheDocs - Documentation built into the CI
+To enable that the docs are being built for each release, just head over to [ReadTheDocs](https://readthedocs.org/), link your account with github and link your repository. The only option you need to enable is in `Admin`>`Advanced Settings`>`Default Settings`>`Install Project`.
+<!-- https://stackoverflow.com/questions/61163378/readthedocs-sphinx-setuptools-scm-how-to -->
+Thats it! Everything else will just work. 
+> If you want to have a new version of your docs built for each submitted PR (very helpful when working on the docs themselves), navigate to the project and click `Admin`>`Advanced Settings`>`Build pull requests for this project`.
+
 
 ## Optional "nice to have" features
 

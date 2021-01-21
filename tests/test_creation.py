@@ -121,7 +121,7 @@ class TestCookieSetup(object):
             'data/interim',
             'data/processed',
             'data/raw',
-            # 'docs',
+            'docs',
             'notebooks',
         ]
 
