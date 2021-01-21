@@ -32,12 +32,11 @@ author = "{{cookiecutter.author_name}}"
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
-#
-# The short X.Y version.
-version = {{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}.__version__.split("+")[0]
-# The full version, including alpha/beta/rc tags.
-release = {{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}.__version__
-
+# see https://pypi.org/project/setuptools-scm/ for details
+from pkg_resources import get_distribution
+release = get_distribution('{{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}').version
+# for example take major/minor
+version = '.'.join(release.split('.')[:2])
 
 # -- General configuration ---------------------------------------------------
 
