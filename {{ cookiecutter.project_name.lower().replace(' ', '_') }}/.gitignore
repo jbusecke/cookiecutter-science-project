@@ -89,3 +89,13 @@ target/
 
 # Mypy cache
 .mypy_cache/
+
+# Dask cache
+dask-worker-space/
+
+#xESMF cache and logs
+*.ESMF_LogFile
+
+# large files
+*.zarr
+*.nc
