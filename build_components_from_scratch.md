@@ -32,7 +32,7 @@ dependencies:
     - sphinxcontrib-srclinks
 
 ```
-Build the environment with `conda create env -f docs/environment.yml, and activate it with `conda activate <repo>_docs`
+Build the environment with `conda create env -f docs/environment.yml`, and activate it with `conda activate <repo>_docs`
 
 3. Setup the folder structure with `sphinx-quickstart`
 4. Populate your docs with `.rst` and `.ipynb` files
