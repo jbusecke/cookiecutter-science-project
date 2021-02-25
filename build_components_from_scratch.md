@@ -50,7 +50,7 @@ Build the environment with `conda create env -f docs/environment.yml`, and activ
   os.environ["PYTHONPATH"] = str(root)
   sys.path.insert(0, str(root))
   
-  import <repo>
+  import <repo> # isort:skip
   ```
   
   - Grab the recent version from the packaging. 
