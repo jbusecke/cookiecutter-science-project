@@ -60,9 +60,9 @@ Build the environment with `conda create env -f docs/environment.yml`, and activ
   # built documents.
   #
   # The short X.Y version.
-  version = xarray.__version__.split("+")[0]
+  version = <repo>.__version__.split("+")[0]
   # The full version, including alpha/beta/rc tags.
-  release = xarray.__version__
+  release = <repo>.__version__
   ```
   
 
