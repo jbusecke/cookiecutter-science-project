@@ -4,6 +4,6 @@ python:
    version: 3.8
    install:
       - method: setuptools
-        path: package
+        path: .
 sphinx:
   fail_on_warning: true
