@@ -89,7 +89,7 @@ it easily. The most common ways to install python packages are [pypi]() and [con
 ### Pypi
 Releasing on pypi is already built into the CI. You only have to follow these 4 simple steps:
 1. Get an account on [pypi](https://pypi.org)
-2. Enter your username and passwords in the Settings > Secrets Menu of your repository. They need to be named `PIPY_USERNAME` and `PIPY_PASSWORD` respectively (watch the spelling!)
+2. Enter your username and passwords in the Settings > Secrets Menu of your repository. They need to be named `PYPI_USERNAME` and `PYPI_PASSWORD` respectively (watch the spelling!)
 3. Fill out the `classifiers` and `install_requires` fields in `setup.cfg`. This will ensure that any dependencies are installed when your package is installed, and your stuff works right out of the box.
 4. Release a new version by clicking on `Releases` in the right sidebar and then `Draft a new release`. 
 Thats it! For each new version step 4 is all you need to do to publish!
