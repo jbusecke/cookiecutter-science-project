@@ -2,7 +2,7 @@ name: CI
 on:
   push:
     branches:
-      - "master"
+      - "main"
   pull_request:
     branches:
       - "*"
@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Cache conda
         uses: actions/cache@v1
         env:
@@ -30,7 +30,7 @@ jobs:
         with:
           path: ~/conda_pkgs_dir
           key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('ci/environment-py${{ matrix.python-version }}.yml') }}
-      
+
       - uses: conda-incubator/setup-miniconda@v2
         with:
           channels: conda-forge
