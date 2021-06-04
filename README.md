@@ -131,8 +131,9 @@ Thats it! Everything else will just work.
 
 Coming soon
 
+### Dependabot
 
-
+The template includes a configuration file (`.github/dependabot.yaml`) for [dependabot](https://dependabot.com), which automatically checks if updates for github actions are available and makes a PR to update them if that is the case.
 
 
 ## Organization and additional features
