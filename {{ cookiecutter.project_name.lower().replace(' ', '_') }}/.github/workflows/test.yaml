@@ -1,5 +1,13 @@
 name: Tests
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - "master"
+  pull_request:
+    branches:
+      - "*"
+  schedule:
+    - cron: "0 13 * * 1"
 {% raw %}
 jobs:
   build:
