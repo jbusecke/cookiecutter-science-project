@@ -14,7 +14,6 @@ import os
 import pathlib
 import sys
 
-
 print("python exec:", sys.executable)
 print("sys.path:", sys.path)
 root = pathlib.Path(__file__).parent.parent.absolute()
@@ -34,6 +33,7 @@ author = "{{cookiecutter.author_name}}"
 # built documents.
 # see https://pypi.org/project/setuptools-scm/ for details
 from pkg_resources import get_distribution
+
 release = get_distribution('{{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}').version
 # for example take major/minor
 version = '.'.join(release.split('.')[:2])

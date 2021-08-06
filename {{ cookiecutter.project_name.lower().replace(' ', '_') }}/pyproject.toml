@@ -4,6 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
 
+[tool.black]
+line-length = 105
+
 [tool.interrogate]
 ignore-init-method = true
 ignore-init-module = false
@@ -12,14 +15,12 @@ ignore-semiprivate = true
 ignore-private = true
 ignore-property-decorators = true
 ignore-module = false
-fail-under = 95
-exclude = ["setup.py", "docs", "tests"]
+fail-under = 80
 verbose = 1
 quiet = false
 color = true
 
 [tool.isort]
-known_third_party = ["numpy", "pytest", "setuptools"]
 
 [tool.pytest.ini_options]
 minversion = "6.0"

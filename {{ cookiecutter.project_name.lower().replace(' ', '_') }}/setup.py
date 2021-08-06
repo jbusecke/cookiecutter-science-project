@@ -1,6 +1,5 @@
 from setuptools import setup
 
-
 setup(
     use_scm_version={
         "write_to": "{{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}/_version.py",
