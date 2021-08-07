@@ -1,0 +1,43 @@
+{% raw %}
+---
+name: deploy-book
+
+# Only run this when notebooks in the master branch change
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - 'notebooks/**'
+
+# This job installs dependencies, build the book, and pushes it to `gh-pages`
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    # Install dependencies
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+
+    - name: Install dependencies
+      run: |
+        pip install -r notebooks/jupyter-book/requirements.txt
+    # Copy the notebooks into build directory
+    - name: Copy the notebooks
+      run: |
+        cp notebooks/*.ipynb notebooks/jupyter-book/
+    # Build the book
+    - name: Build the book
+      run: |
+        jupyter-book build notebooks/jupyter-book
+    # Push the book's HTML to github-pages
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: notebooks/jupyter-book/_build/html
+{% endraw %}
