@@ -48,7 +48,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.napoleon",
     "nbsphinx",
-    "recommonmark",
+    "myst_parser",
     "sphinx.ext.mathjax",
     "sphinx.ext.autosummary",
     "sphinx.ext.extlinks",
@@ -81,6 +81,8 @@ html_theme = "pangeo"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
+# A sphinx extension to add links to the documentation page source.
+srclink_project = "https://github.com/{{ cookiecutter.github_username }}/{{cookiecutter.project_name.lower().replace(' ', '_')}}"
 
 # -- nbsphinx specific options ----------------------------------------------
 # this allows notebooks to be run even if they produce errors.

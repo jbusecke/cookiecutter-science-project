@@ -1,9 +1,22 @@
+# .readthedocs.yaml
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required
+version: 2
+
 conda:
-    file: docs/environment.yml
+  environment: docs/environment.yml
+
+sphinx:
+   configuration: docs/conf.py
+   fail_on_warning: true
+
+formats:
+   - pdf
+
 python:
    version: 3.8
    install:
-      - method: setuptools
-        path: .
-sphinx:
-  fail_on_warning: true
+   - method: setuptools
+     path: .
