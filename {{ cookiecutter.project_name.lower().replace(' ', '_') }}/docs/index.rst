@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to {{cookiecutter.project_name.lower().replace(' ', '_')}}'s documentation!
-=======================================
+================================================================================================================================
 
 This is an awesome description of {{cookiecutter.project_name.lower().replace(' ', '_')}}, written in `reStructuredText`_.
 

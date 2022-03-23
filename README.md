@@ -58,9 +58,9 @@ We now want to connect this local repository to a github repo. This can be done 
 
 If using the Github Command Line Interface, simply navigate to the project root folder and type:
 ```shell
-gh repo create 
+gh repo create
 ```
-and follow the instructions. You might have to authenticate this if you are using it for the first time, but this should all be explained by prompts in the command line. 
+and follow the instructions. You might have to authenticate this if you are using it for the first time, but this should all be explained by prompts in the command line.
 
 > Hint: If you want your repository to be private, you can simply do `gh repo create --private` instead of selecting it from the prompts.
 
@@ -93,7 +93,7 @@ Releasing on pypi is already built into the CI. You only have to follow these 4 
 1. Get an account on [pypi](https://pypi.org)
 2. Enter your username and passwords in the Settings > Secrets Menu of your repository. They need to be named `PYPI_USERNAME` and `PYPI_PASSWORD` respectively (watch the spelling!)
 3. Fill out the `classifiers` and `install_requires` fields in `setup.cfg`. This will ensure that any dependencies are installed when your package is installed, and your stuff works right out of the box.
-4. Release a new version by clicking on `Releases` in the right sidebar and then `Draft a new release`. 
+4. Release a new version by clicking on `Releases` in the right sidebar and then `Draft a new release`.
 Thats it! For each new version step 4 is all you need to do to publish!
 
 Now you can install your released version of your package with
@@ -105,11 +105,15 @@ pip install <yourpackagename>
 Instructions coming soon.
 
 ## Documentation
-The template comes with a fully set up documentation and examples. You can test the docs locally by building the docs conda environment 
+The template comes with a fully set up documentation and examples. You can test the docs locally by building the docs conda environment
 ```
 conda env create -f docs/environment.yml
 ```
-Then activate the environment and navigate to the `docs` folder and build the html documentation
+Now activate the environment. Once you have activated the environment, install your package
+```
+pip install -e .
+```
+Then navigate to the `docs` folder and build the html documentation
 ```
 make html
 ```
@@ -119,11 +123,11 @@ open _build/html/index.html
 ```
 
 ### ReadTheDocs - Documentation built into the CI
-To enable that the docs are being built for each release, just head over to [ReadTheDocs](https://readthedocs.org/), link your account with github and link your repository. 
+To enable that the docs are being built for each release, just head over to [ReadTheDocs](https://readthedocs.org/), link your account with github and link your repository.
 
 The only option you need to enable is in `Admin`>`Advanced Settings`>`Default Settings`>`Install Project`.
 <!-- https://stackoverflow.com/questions/61163378/readthedocs-sphinx-setuptools-scm-how-to -->
- 
+
 > If you want to have a new version of your docs built for each submitted PR (very helpful when working on the docs themselves), navigate to the project and click `Admin`>`Advanced Settings`>`Build pull requests for this project`.
 
 > By default RTD does not trigger a build for releases. So if you want your docs to show your shiny new version of the docs for each release, go to your repo `Settings` > `Webhooks`, find the readthedocs hook, click on it and add a checkmark for `Releases` under the `Which events would you like to trigger this webhook?` section.
@@ -162,7 +166,7 @@ Your `project_name` folder should look like this:
 ├── data
 │   ├── interim           <- Small subset datasets needed to reproduce results in notebooks.
 │   ├── processed         <- Datasets that were processed from `raw` folder
-│   └── raw               <- Immutable raw data. Download from source with a script or link from    
+│   └── raw               <- Immutable raw data. Download from source with a script or link from
 │                            other source (e.g. HPC filesytem)
 │
 ├── ci                    <- Files for continous integration; see travis-ci.com
@@ -183,7 +187,7 @@ Keeping all the elements of your project contained in this structure ensures tha
 
 #### Version control with git
 The setup has already created a matching github repository([example based on this readme](https://github.com/jbusecke/cookiecutter-science-project_demo_repo)) to your local project folder to get you started.
-Just add, commit and push any changes you make regularly to have a backed up history of your project.  
+Just add, commit and push any changes you make regularly to have a backed up history of your project.
 
 #### `data` folder
 Contents of the data folder should not be committed to the github repository (*the data folder can be included to the .gitignore file - scroll the bottom of the .gitignore in the template*) . Ideally a script in `scripts` is used to download publicly available data into the `data/raw` folder. In climate science, some datasets (like large global climate model datasets) might not be available publicly or are simply too large to download quickly. In this case we recommend linking the files (using absolute filepaths) into the `data/raw` folders using a script(which itself should reside in `scripts`).
@@ -202,7 +206,7 @@ To keep tidy and presentable notebooks:
 #### The source code
 A bunch of notebooks with thousands of line of code is not a great way to design reproducible science. Using this template your project turns into an installable python package.
 
-Lets say you start exploring some data and then develop a set of functions to calculate some fancy new way to quantify something, calculated in a function `awesome_diagnostic`.  
+Lets say you start exploring some data and then develop a set of functions to calculate some fancy new way to quantify something, calculated in a function `awesome_diagnostic`.
 
 Wouldnt it be nice if some other researcher could just install your project and try this new method out on a different dataset?
 You can easily move code out of your notebooks into a new python module `project_name/new_module.py`.

@@ -18,6 +18,7 @@ dependencies:
      - docrep<=0.2.7
      - nbsphinx
      - jupyter_client
+     - myst-parser
      - sphinx_pangeo_theme
      - sphinx-copybutton
      - sphinxcontrib-srclinks
