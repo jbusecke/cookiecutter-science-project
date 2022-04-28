@@ -1,0 +1,2 @@
+# No need to include other dependencies as we are just rendering
+jupyter-book

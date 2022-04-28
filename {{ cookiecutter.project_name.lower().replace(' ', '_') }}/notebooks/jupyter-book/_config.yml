@@ -1,0 +1,16 @@
+title                       : {{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}  # The title of the book. Will be placed in the left navbar.
+author                      : {{cookiecutter.author_name}}  # The author of the book
+logo                        : dummy_logo.png  # A path to the book logo
+only_build_toc_files        : true  # Auto-exclude files not in the toc
+
+repository:
+  url                       : https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name.lower().replace(' ', '_')}}  # The URL to your book's repository
+  path_to_book              : "notebooks"  # A path to your book's folder, relative to the repository root.
+  branch                    : master  # Which branch of the repository should be used when creating links
+
+html:
+  use_repository_button     : true  # Whether to add a link to your repository button
+  home_page_in_navbar       : false  # Whether to include your home page in the left Navigation Bar
+
+execute:
+  execute_notebooks         : "off"  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
