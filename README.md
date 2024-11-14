@@ -1,3 +1,7 @@
+> [!WARNING]  
+> **THIS PROJECT IS NO LONGER ACTIVELY MAINTAINED**
+> Consider the resources provided by [Scientific Python](https://scientific-python.org/) and in particular the [Scientific Python Library Development Guide](https://learn.scientific-python.org/development/) as alternative!
+
 [![Build Status](https://img.shields.io/github/workflow/status/jbusecke/cookiecutter-science-project/CI?logo=github)](https://github.com/jbusecke/cookiecutter-science-project/actions)
 [![DOI](https://zenodo.org/badge/169483949.svg)](https://zenodo.org/badge/latestdoi/169483949)
 
